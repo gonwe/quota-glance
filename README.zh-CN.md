@@ -4,9 +4,9 @@
 
 Quota Glance 是一个 GNOME Shell 扩展，用于在 GNOME 面板中快速查看各项服务的额度和余额。
 
-项目目前面向 GNOME Shell 50，使用 TypeScript 7、Oxlint、GJS 和 LibSoup 3
-构建。它包含状态与定时刷新运行时、动态面板及弹出层界面、环境变量加载、HTTP
-错误脱敏，以及真实的 Codex、GitHub Copilot、DeepSeek、Z.ai 和 OpenCode Go
+扩展元数据现声明兼容 GNOME Shell 50 和 51，使用 TypeScript 7、Oxlint、GJS 和
+LibSoup 3 构建。它包含状态与定时刷新运行时、动态面板及弹出层界面、环境变量加载、
+HTTP 错误脱敏，以及真实的 Codex、GitHub Copilot、DeepSeek、Z.ai 和 OpenCode Go
 Provider。
 
 <p align="center">
@@ -72,9 +72,9 @@ npm run test:gnome:dtp
 npm run package
 ```
 
-`npm run dev` 是常用的可视化开发流程。它会构建并打包扩展，启动一个可见的嵌套
-GNOME Shell 50 会话，并自动打开弹出层。如果系统已安装 Dash to Panel，预览环境也会
-加载它并选择其底部面板。
+`npm run dev` 是常用的可视化开发流程。它会构建并打包扩展，使用已安装的 Mutter
+DevKit 启动可见的嵌套 GNOME Shell 会话，并自动打开弹出层。如果系统已安装 Dash to
+Panel，预览环境也会加载它并选择其底部面板。
 
 开发预览会启用所有 Provider，并使用隔离的临时 keyfile 后端。关闭嵌套 GNOME
 窗口即可停止预览。设置会与预览环境中的首选项窗口共享，并在退出时删除；宿主桌面
@@ -104,8 +104,9 @@ Provider 凭据。旧的 `npm run install:local` 仍作为 `host:install` 的别
 仍会成功完成，并提示只需重新登录一次；扩展文件已经安装，无需重新执行安装命令。
 
 GNOME Shell 会在整个 Wayland 会话生命周期内缓存扩展注册表。开发过程中可以使用
-`npm run test:gnome` 验证修改，无需注销。该命令会启动隔离的无头 GNOME Shell 50
-会话，测试弹出层、独立 Provider 开关、部分刷新失败，以及连续五次启用和禁用。
+`npm run test:gnome` 验证修改，无需注销。该命令会使用已安装的 Mutter DevKit 启动
+隔离的无头 GNOME Shell 会话，测试弹出层、独立 Provider 开关、部分刷新失败，以及连续
+五次启用和禁用。发布支持 GNOME Shell 51 的版本前，应在 Shell 51 环境中运行此测试。
 
 ## 发布
 

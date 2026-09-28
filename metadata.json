@@ -6,6 +6,7 @@
   "settings-schema": "org.gnome.shell.extensions.quota-glance",
   "version-name": "1.0.2",
   "shell-version": [
-    "50"
+    "50",
+    "51"
   ]
 }

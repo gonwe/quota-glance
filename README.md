@@ -5,10 +5,11 @@
 Quota Glance is a GNOME Shell extension that shows service quotas and balances
 in a GNOME panel.
 
-The project currently targets GNOME Shell 50. The W0–W4 foundation uses
-TypeScript 7, Oxlint, GJS, and LibSoup 3. It includes the state and refresh
-runtime, dynamic panel/popup UI, environment loading, sanitized HTTP errors,
-and real Codex, GitHub Copilot, DeepSeek, Z.ai, and OpenCode Go providers.
+The extension declares compatibility with GNOME Shell 50 and 51. The W0–W4
+foundation uses TypeScript 7, Oxlint, GJS, and LibSoup 3. It includes the state
+and refresh runtime, dynamic panel/popup UI, environment loading, sanitized HTTP
+errors, and real Codex, GitHub Copilot, DeepSeek, Z.ai, and OpenCode Go
+providers.
 
 <p align="center">
   <img src="screenshot.png" alt="Quota Glance panel indicator and quota popup" width="410">
@@ -78,15 +79,16 @@ npm run package
 ```
 
 `npm run dev` is the normal visual development loop. It builds and packages the
-extension, starts a visible nested GNOME Shell 50 session, and opens its popup
-automatically. When Dash to Panel is installed system-wide, the preview also
-loads it and selects its bottom panel. The development
-preview enables all providers and uses an isolated temporary keyfile
-backend. Close the nested GNOME window to stop it. The settings are shared with
-the preview's Preferences window, then removed on exit. The host desktop
-session, settings, and installed extensions are not modified. The preview
-passes the host `GH_CONFIG_DIR` through to `gh`, so Copilot uses the existing
-GitHub CLI login without copying credentials into the temporary profile.
+extension, starts a visible nested GNOME Shell session using the installed
+Mutter DevKit, and opens its popup automatically. When Dash to Panel is
+installed system-wide, the preview also loads it and selects its bottom panel.
+The development preview enables all providers and uses an isolated temporary
+keyfile backend. Close the nested GNOME window to stop it. The settings are
+shared with the preview's Preferences window, then removed on exit. The host
+desktop session, settings, and installed extensions are not modified. The
+preview passes the host `GH_CONFIG_DIR` through to `gh`, so Copilot uses the
+existing GitHub CLI login without copying credentials into the temporary
+profile.
 
 GNOME 49 and newer require Mutter DevKit for visible nested sessions. Install
 it once on CachyOS/Arch:
@@ -115,9 +117,11 @@ the files are already installed and the command does not need to be rerun.
 GNOME Shell caches its extension registry for the lifetime of a Wayland
 session. When installing the extension for the first time, sign out and back in
 before enabling it. Development changes can be verified without logging out by
-running `npm run test:gnome`, which starts an isolated headless GNOME Shell 50
-session and exercises the popup, independent provider toggles, partial refresh
-failure, and five enable/disable cycles.
+running `npm run test:gnome`, which starts an isolated headless GNOME Shell
+session using the installed Mutter DevKit and exercises the popup, independent
+provider toggles, partial refresh failure, and five enable/disable cycles. Run
+this smoke test under GNOME Shell 51 before publishing a release that declares
+51 support.
 
 ## Release
 

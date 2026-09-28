@@ -46,7 +46,7 @@ test('build contains a loadable extension layout', async () => {
     await readFile(path.join(process.cwd(), 'package.json'), 'utf8'),
   );
   assert.equal(metadata.uuid, 'quota-glance@geequlim');
-  assert.deepEqual(metadata['shell-version'], ['50']);
+  assert.deepEqual(metadata['shell-version'], ['50', '51']);
   assert.equal(metadata['version-name'], packageJson.version);
   assert.equal(metadata['session-modes'], undefined);
   assert.equal(

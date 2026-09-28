@@ -12,7 +12,8 @@
 - 扩展名称：`Quota Glance`
 - UUID：`quota-glance@geequlim`
 
-首个版本以当前开发环境中的 GNOME Shell 50 为目标。基础架构稳定后，再评估支持 GNOME Shell 48 和 49。
+首个版本以当前开发环境中的 GNOME Shell 50 为目标。GNOME Shell 51 已纳入扩展元数据的兼容范围；发布前必须在对应版本中完成集成回归。
+基础架构稳定后，再评估支持 GNOME Shell 48 和 49。
 
 ## 2. 项目目标
 
@@ -1239,7 +1240,7 @@ W0 + W1，使用 fake provider 打通 build、install、刷新、stale 和 disab
 
 首个可发布版本必须满足：
 
-- 支持 GNOME Shell 50。
+- 支持 GNOME Shell 50 和 51，并在两个版本中完成集成回归。
 - 五个内置 provider 均可工作。
 - 扩展自身不依赖 Python。
 - HTTP provider 不依赖 curl。

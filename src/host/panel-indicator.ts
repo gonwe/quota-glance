@@ -292,7 +292,7 @@ class PanelIndicator extends PanelMenu.Button {
     viewModel: ProviderViewModel,
   ): St.BoxLayout {
     const section = new St.BoxLayout({
-      vertical: true,
+      orientation: Clutter.Orientation.VERTICAL,
       xExpand: true,
       styleClass: 'quota-glance-provider-section',
     });
@@ -341,7 +341,7 @@ class PanelIndicator extends PanelMenu.Button {
 
     for (const metric of viewModel.metrics) {
       const metricBox = new St.BoxLayout({
-        vertical: true,
+        orientation: Clutter.Orientation.VERTICAL,
         xExpand: true,
         styleClass: 'quota-glance-metric',
       });
