@@ -1,0 +1,18 @@
+{
+  "KPackageStructure": "Plasma/Applet",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Name": "Quota Glance"
+      }
+    ],
+    "Category": "System Information",
+    "Description": "Shows usage limits from Codex, Copilot, Z.ai, OpenCode Go, and DeepSeek",
+    "Icon": "view-statistics",
+    "Id": "io.github.geequlim.quotaglance",
+    "License": "GPL-3.0-or-later",
+    "Name": "Quota Glance",
+    "Version": "1.1.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0"
+}

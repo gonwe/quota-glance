@@ -139,6 +139,16 @@ AUR 仓库默认缓存在 `~/.cache/quota-glance/aur/`；也可以通过
 `AUR_REPO_DIR` 指定已有的本地仓库。发布前需要准备好具有 SSH 权限的 AUR 账号，并
 安装 Arch 的 `makepkg`。
 
+## KDE Plasma 6
+
+仓库还包含一个 Plasma 6 小组件，复用 GNOME 版的五个来源图标和额度来源。安装到当前用户：
+
+    ./scripts/install-plasma-local.sh
+
+安装后重新加载 Plasma Shell。小组件菜单中的“配置”页可以选择 Codex、GitHub Copilot、Z.ai、OpenCode Go、DeepSeek，并设置自动刷新间隔。默认显示 Codex 和 DeepSeek。
+
+API 密钥及 OpenCode Go 工作区凭据沿用用户环境变量；也可以放在 ~/.config/quota-glance/env 中，格式为 KEY=value。支持 DEEPSEEK_API_KEY、Z_AI_API_KEY、OPENCODE_GO_WORKSPACE_ID 和 OPENCODE_GO_AUTH_COOKIE。Copilot 使用已登录的 gh，Codex 使用已登录的 Codex CLI。
+
 ## 许可证
 
 Copyright © 2026 Geequlim.
